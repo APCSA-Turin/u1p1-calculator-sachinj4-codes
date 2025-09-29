@@ -70,18 +70,21 @@ public class TipCalculator {
         // and the loop repeats as long as the condition remains TRUE.
         // when the condition becomes FALSE, it stops
         Scanner noodle = new Scanner(System.in);
-        while (isDone != true) {
+        String food = "";
+        String escape = "-1";
+        result += "Items ordered:\n";
+        
+        while (isDone == false) {
             System.out.println("Print a food item you want to add to your list. Enter -1 to quit");
             String item = noodle.nextLine();
-            String escape = "1";
             if (item.equals(escape)){
                 isDone = true;
+                noodle.close();
+                result += "-------------------------------\n";
             } else {
-
+                result += item + "\n";
             }
-    
         }
-
         return result;
     }
     
